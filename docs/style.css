@@ -1,0 +1,57 @@
+:root {
+  color-scheme: dark;
+  --bg: #232325; --bg-band: #303033; --card: #29292b; --text: #ececee; --text-2: #abaeb1; --text-3: #8c8c93;
+  --line: #141416; --accent: #a58bff; --accent-text: #1b1330; --good: #3cc07f; --gold: #f4c44e;
+  --shadow: 0 10px 40px rgba(0, 0, 0, .45);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: var(--accent); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+header.top { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 20px; color: var(--text); text-decoration: none; }
+.brand img { width: 34px; height: 34px; border-radius: 8px; }
+nav a { color: var(--text-2); text-decoration: none; margin-left: 22px; font-size: 15px; }
+nav a:hover { color: var(--text); }
+.hero { display: grid; grid-template-columns: 1fr 1.25fr; gap: 40px; align-items: center; padding: 48px 0 72px; }
+.hero h1 { font-size: clamp(34px, 5vw, 52px); line-height: 1.08; margin: 0 0 18px; letter-spacing: -.02em; }
+.hero p.lead { font-size: 19px; color: var(--text-2); margin: 0 0 28px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: var(--accent-text); font-weight: 650; text-decoration: none; padding: 14px 24px; border-radius: 12px; font-size: 17px; }
+.btn:hover { filter: brightness(1.08); }
+.note { color: var(--text-3); font-size: 14px; margin-top: 12px; }
+.shot { display: block; width: 100%; height: auto; border-radius: 12px; box-shadow: var(--shadow); background: var(--bg-band); }
+section { padding: 64px 0; }
+section.band { background: var(--bg-band); }
+h2 { font-size: clamp(26px, 3.4vw, 36px); line-height: 1.15; margin: 0 0 14px; letter-spacing: -.015em; }
+.sub { color: var(--text-2); max-width: 640px; margin: 0 0 36px; }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; counter-reset: s; }
+.step { background: var(--card); border-radius: 14px; padding: 24px; }
+.step::before { counter-increment: s; content: counter(s); display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--accent); color: var(--accent-text); font-weight: 700; margin-bottom: 12px; }
+.step h3 { margin: 0 0 6px; font-size: 19px; }
+.step p { margin: 0; color: var(--text-2); font-size: 16px; }
+.feature { display: grid; grid-template-columns: 1fr 1.15fr; gap: 44px; align-items: center; padding: 28px 0; }
+.feature.flip .text { order: 2; }
+.feature h3 { font-size: 26px; line-height: 1.2; margin: 0 0 10px; }
+.feature p { color: var(--text-2); margin: 0 0 10px; }
+.feature .tag { display: inline-block; font-size: 13px; font-weight: 650; color: var(--gold); letter-spacing: .02em; margin-bottom: 8px; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.mini { background: var(--card); border-radius: 14px; padding: 22px; }
+.mini h4 { margin: 0 0 6px; font-size: 17px; }
+.mini p { margin: 0; color: var(--text-2); font-size: 15.5px; }
+.privacy { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.install ol { padding-left: 22px; } .install li { margin: 8px 0; }
+details { background: var(--card); border-radius: 12px; padding: 16px 20px; margin: 10px 0; }
+summary { cursor: pointer; font-weight: 650; }
+details p { color: var(--text-2); margin: 10px 0 0; }
+code { background: var(--bg-band); padding: 2px 6px; border-radius: 6px; font-size: .92em; }
+pre { background: var(--bg-band); padding: 14px 16px; border-radius: 10px; overflow-x: auto; }
+footer { padding: 40px 0 56px; color: var(--text-3); font-size: 14px; text-align: center; }
+footer a { color: var(--text-2); }
+@media (max-width: 820px) {
+  .hero, .feature, .privacy { grid-template-columns: 1fr; gap: 24px; }
+  .feature.flip .text { order: 0; }
+  .steps, .grid { grid-template-columns: 1fr; }
+  nav { display: none; }
+  .hero { padding-top: 24px; }
+}
